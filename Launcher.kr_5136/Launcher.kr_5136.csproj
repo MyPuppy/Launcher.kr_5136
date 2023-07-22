@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{1AE7B627-D8C5-4470-84E0-1AA425F8CA7C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>Launcher</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\nexon\HF_20230310_Facelift\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LAON_kr.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="KartRider.Common\KartNew.Utilities\TimeUtil.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Network\SocketInfo.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Security\KRCrypto.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Security\KREncodedBlock.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Security\KRPacketCrypto.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Utilities\Adler32Helper.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Utilities\ByteArraySegment.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Utilities\HexEncoding.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Utilities\LockFreeQueue_T_.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Utilities\NativeMethods.cs" />
+    <Compile Include="KartRider.Common\KartRider\IO\CryptoConstants.cs" />
+    <Compile Include="KartRider.Common\KartRider\IO\InPacket.cs" />
+    <Compile Include="KartRider.Common\KartRider\IO\OutPacket.cs" />
+    <Compile Include="KartRider.Common\KartRider\IO\PacketBase.cs" />
+    <Compile Include="KartRider.Common\KartRider\Common.Network\Session.cs" />
+    <Compile Include="KartRider.Common\KartRider\IO\PacketReadException.cs" />
+    <Compile Include="KartRider.Data\EventBuyCount.cs" />
+    <Compile Include="KartRider.Data\TestServer.cs" />
+    <Compile Include="KartRider.Data\ExcData\SpeedPatch.cs" />
+    <Compile Include="KartRider.Data\Forms\Launcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KartRider.Data\Forms\Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KartRider.Data\Forms\Options.designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KartRider.Data\GameDataReset.cs" />
+    <Compile Include="KartRider.Data\GameType.cs" />
+    <Compile Include="KartRider.Data\KartParts_SN\KartSN_Count.cs" />
+    <Compile Include="KartRider.Data\KartParts_SN\KartSN_Parts.cs" />
+    <Compile Include="KartRider.Data\KartParts_SN\PartsDataReset.cs" />
+    <Compile Include="KartRider.Data\ExcData\PartSpec.cs" />
+    <Compile Include="KartRider.Data\KartParts_SN\Spec\DriftEscapeForce_Count.cs" />
+    <Compile Include="KartRider.Data\KartParts_SN\Spec\NormalBoosterTime_Count.cs" />
+    <Compile Include="KartRider.Data\KartParts_SN\Spec\SteerConstraint_Count.cs" />
+    <Compile Include="KartRider.Data\ExcData\SpeedType.cs" />
+    <Compile Include="KartRider.Data\KartParts_SN\Spec\TransAccelFactor_Count.cs" />
+    <Compile Include="KartRider.Data\KartSpec\FlyingPet.cs" />
+    <Compile Include="KartRider.Data\KartSpec\Kart.cs" />
+    <Compile Include="KartRider.Data\KartSpec\Kart\Kart_01.cs" />
+    <Compile Include="KartRider.Data\KartSpec\Kart\Kart_02.cs" />
+    <Compile Include="KartRider.Data\KartSpec\Kart\Kart_03.cs" />
+    <Compile Include="KartRider.Data\KartSpec\Kart\Kart_04.cs" />
+    <Compile Include="KartRider.Data\KartSpec\Kart\Kart_05.cs" />
+    <Compile Include="KartRider.Data\KartSpec\Kart\Kart_06.cs" />
+    <Compile Include="KartRider.Data\KartSpec\StartGameData.cs" />
+    <Compile Include="KartRider.Common\PacketName\PacketNameValues.cs" />
+    <Compile Include="KartRider.Common\TrackName\TrackNameValues.cs" />
+    <Compile Include="KartRider.Data\RandomTrack.cs" />
+    <Compile Include="KartRider.Data\Rider\Emblem.cs" />
+    <Compile Include="KartRider.Data\Set_Data\config.cs" />
+    <Compile Include="KartRider.Data\Set_Data\FileName.cs" />
+    <Compile Include="KartRider.Data\Set_Data\StartingLoad_ALL.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="KartRider.Data\Forms\GetKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KartRider.Data\Forms\GetKart.Designer.cs">
+      <DependentUpon>GetKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KartRider.Data\ExcData\KartExcData.cs" />
+    <Compile Include="KartRider.Data\LauncherSystem.cs" />
+    <Compile Include="KartRider.Data\GameSupport.cs" />
+    <Compile Include="KartRider.Data\Rider\RiderSchool.cs" />
+    <Compile Include="KartRider.Data\Rider\FavoriteItem.cs" />
+    <Compile Include="KartRider.Data\Rider\NewRider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="KartRider.Data\ExcData\TuneSpec.cs" />
+    <Compile Include="KartRider.Data\Set_Data\SetGameOption.cs" />
+    <Compile Include="KartRider.Data\Set_Data\SetGameData.cs" />
+    <Compile Include="KartRider.Data\Set_Data\SetMyRoom.cs" />
+    <Compile Include="KartRider.Data\Set_Data\SetRider.cs" />
+    <Compile Include="KartRider.Data\Set_Data\SetRiderItem.cs" />
+    <Compile Include="KartRider.Data\Set_Data\Set_ETC.cs" />
+    <Compile Include="KartRider.Data\Server\RouterListener.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="KartRider.Data\Program.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="KartRider.Data\Server\SessionGroup.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="KartRider.Data\Server\ClientSession.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KartRider.Data\Forms\GetKart.resx">
+      <DependentUpon>GetKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KartRider.Data\Forms\Launcher.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KartRider.Data\Forms\Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LAON_kr.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
